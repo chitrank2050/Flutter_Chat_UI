@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:chat_ui/widgets/storyTile.dart';
-import 'package:chat_ui/widgets/chatTile.dart';
+import 'package:chat_ui/widgets/chatListTile.dart';
 import 'package:chat_ui/data/data.dart';
 import 'package:chat_ui/models/story_model.dart';
 import 'package:chat_ui/models/chat_model.dart';
@@ -120,7 +120,7 @@ class _HomeState extends State<Home> {
                       itemCount: chats.length,
                       physics: ClampingScrollPhysics(),
                       itemBuilder: (BuildContext context, int i) {
-                        return ChatTile(
+                        return ChatListTile(
                           imgUrl: chats[i].imgUrl,
                           haveUnreadMessages: chats[i].haveUnreadMessages,
                           lastMessage: chats[i].lastMessage,
