@@ -55,6 +55,24 @@ List<ChatModel> getChats() {
       haveUnreadMessages: true,
       unreadMessages: 1,
     ),
+    ChatModel(
+      imgUrl:
+          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
+      name: 'Michelle',
+      lastMessage: 'Ut at dolor quis odio consequat varius. Integer ac leo.',
+      lastSeenTime: '2m',
+      haveUnreadMessages: false,
+      unreadMessages: 0,
+    ),
+    ChatModel(
+      imgUrl:
+          'https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1581&q=80',
+      name: 'Summer',
+      lastMessage: 'Ut at dolor quis odio consequat varius. Integer ac leo.',
+      lastSeenTime: '0m',
+      haveUnreadMessages: false,
+      unreadMessages: 1,
+    ),
   ];
   return chats;
 }

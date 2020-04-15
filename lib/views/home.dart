@@ -85,6 +85,7 @@ class _HomeState extends State<Home> {
               ///
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -92,23 +93,44 @@ class _HomeState extends State<Home> {
                     topRight: Radius.circular(40.0),
                   ),
                 ),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: chats.length,
-                    physics: ClampingScrollPhysics(),
-                    itemBuilder: (BuildContext context, int i) {
-                      return ChatTile(
-                        imgUrl: chats[i].imgUrl,
-                        haveUnreadMessages: chats[i].haveUnreadMessages,
-                        lastMessage: chats[i].lastMessage,
-                        lastSeenTime: chats[i].lastSeenTime,
-                        name: chats[i].name,
-                        unreadMessages: chats[i].unreadMessages,
-                      );
-                    },
-                  ),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(top: 40.0),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            'Recent',
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(
+                            Icons.more_vert,
+                            color: Colors.black54,
+                          ),
+                        ],
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: chats.length,
+                      physics: ClampingScrollPhysics(),
+                      itemBuilder: (BuildContext context, int i) {
+                        return ChatTile(
+                          imgUrl: chats[i].imgUrl,
+                          haveUnreadMessages: chats[i].haveUnreadMessages,
+                          lastMessage: chats[i].lastMessage,
+                          lastSeenTime: chats[i].lastSeenTime,
+                          name: chats[i].name,
+                          unreadMessages: chats[i].unreadMessages,
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],
